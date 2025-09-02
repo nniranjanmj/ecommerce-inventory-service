@@ -48,4 +48,9 @@ app.post('/release', (req, res) => {
   res.json({ success: true, item });
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', service: 'inventory-service' });
+});
+
 app.listen(3005, () => console.log('Inventory Service running on port 3005'));
